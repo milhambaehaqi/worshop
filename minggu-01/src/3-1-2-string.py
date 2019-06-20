@@ -1,5 +1,5 @@
 
-nama = "andre putra"
+nama = "MUHAMMAD ILHAM BAEHAQI"
 
 print (nama)
 print (nama[0])
