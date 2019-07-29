@@ -1,0 +1,29 @@
+Peluang 1: Infrastruktur dan Tools Data Science yang Baik
+
+ Saat ini Python banyak digunakan untuk data science karena memiliki skalabilitas yang baik. Python tidak akan berubah menjadi seperti R atau Matlab (tidak bermaksud menyinggung programmer R). Tapi, R dan Matlab lebih seperti prototyping tools, kita tidak mau kan Python berubah menjadi prototyping tools, kita ingin Python bisa digunakan untuk membantu pekerjaan yang berat.
+ Ada 2 jenis infrastruktur/tools:
+ Kita bisa membuat produk dari open source tools. Contohnya DataRobot.
+ Memulai proyek baru di dalam open source tools. Contohnya Sk-learn, Pandas.
+ Beralih ke hal yang lebih spesifik, berikut ini adalah wishlist untuk proyek di dalam open source tools yang lebih spesifik:
+ Shared Memory Parallelism.
+ Integrasi Hadoop yang baik.
+ Mendukung “Big Data”. Jika kita berbicara tentang “Big Data”, yang kita pikirkan pasti Hadoop, Java, Scala. Ada tools Python yang dapat berinteraksi dengan beberapa teknologi “Big Data” yang baru, tapi tidak terlalu dipakai oleh komunitas Python, melainkan oleh orang yang memiliki teknologi tadi. Mereka tau Python sangat terkenal, jadi mereka membuat API pada teknologi mereka sehingga komunitas Python bisa menggunakan tools tersebut di luar bahasa Python. Jika kalian punya passion pada Python, ingin menguasai machine learning atau data science, ada pekerjaan yang harus diselesaikan.
+ Distributed in memory data frame. (Pandas)
+ Mudah digunakan termasuk pada deep learning yang powerfull.
+
+
+Peluang 2: Use Cases yang spesifik untuk Penerapan Machine Learning
+
+Tidak terlalu sulit untuk memikirkan apa yang kalian pahami tentang machine learning, bagaimana caranya membuat prediksi dan mengoperasikannya. Cukup mudah kalau dimulai dengan contoh dari hal di sekitar kalian. Hal yang terpenting adalah passion kalian, kalian bisa memahami sesuatu secara mendalam. Seperti pada diagram venn, bidang keahlian sangat penting. Jadi, kalian tidak akan bisa mendalami suatu keahlian, kecuali kalau kalian memang memiliki passion.
+Tapi, kalau kalian butuh ide untuk mencari peluang:
+Kesehatan, bidang yang berpeluang paling besar. Khususnya, pada pembuatan obat yang lebih bagus dengan menggunakan machine learning. Machine learning untuk meningkatkan pelayanan kesehatan. Dari pada orang datang ke dokter ketika sakit, bisa dilakukan prediksi misalnya apakah orang itu punya diabetes atau tidak. Lalu ada quantified self (pengukuran aktivitas tubuh), quantified self merupakan suatu teknologi perangkat berupa gelang atau kaos yang dapat mengukur semua aktivitas pada tubuh manusia. Semua informasi mengenai tubuh seseorang digunakan untuk mengetahui kalau ada sesuatu yang salah sebelum menjadi parah sehingga bisa dilakukan pertolongan secepatnya. Teknologi tersebut akan menyelamatkan banyak nyawa, dan mungkin Saya akan mendalaminya suatu hari.
+Internet of Things / Machine Data secara umum. Akan banyak data yang dihasilkan dari mesin-mesin yang terkoneksi. Semua data itu bisa diotomatisasi dengan machine learning.
+Pendidikan, untuk merancang platform pembelajaran cerdas yang dapat menyesuaikan dengan kemampun belajar siswa. Misalnya memberi mereka sebuah soal, melihat bagaimana mereka mengerjakan soal itu, lalu menyesuaikan soal selanjutnya. Selama ini pendidikan di seluruh dunia menggunakan kurikulum yang sama untuk seluruh siswa. Meskipun ada banyak perusahaan yang sudah membuatnya, tetap ada peluang yang cukup besar pada bidang pendidikan.
+Computer Vision, bidang ini berhubungan dengan deep learning. Teknologi ini baru muncul sekitar 9 atau 10 tahun lalu dan computer vision merupakan bidang yang sangat menarik untuk didalami.
+Robotik, bisa membuat mesin menjadi hidup 
+
+Peluang 3: Layanan Data Science
+Yang terakhir ini, sangat menarik. Data science memiliki peluang besar. Kalau kalian ingin mendirikan perusahaan, bekerja untuk diri sendiri, peluangnya sangat besar.
+
+Data science memiliki peluang yang besar karena banyak sekali perusahaan di luar sana yang berduit banyak, khususnya di Amerika Serikat, mungkin di seluruh dunia, dan mereka butuh data science. Alasan lain karena mereka tidak bisa ‘mengeksekusi’, mereka merekrut (bukan bermaksud menyinggung ahli statistik) banyak ahli statistik, mereka duduk di sebuah ruangan, menulis sesuatu di papan, dan melakukan perhitungan tapi tidak menghasilkan sesuatu untuk bisnis. Alasan mereka harus bersusah payah menerapkan hal-hal tadi, mereka tidak punya kemampuan software engineering. Mereka bisa melakukan analisis, mendapat dataset, menjalankan analisis, mungkin membangun model, tapi seperti menerapkan model yang memiliki pengaruh terhadap bisnis atau menjawab masalah-masalah saintifik, mereka tidak bisa. Jadi, kalian yang memiliki kemampuan software engineering, Saya yakin kalian memiliki kemampuan untuk memahami data science/machine learning. Jika kalian bisa mempelajari pemrograman Python sangat mungkin juga bisa mempelajari data science.
+Data science memiliki peluang yang besar untuk menghasilkan banyak uang dari perusahan besar. Kunci kesuksesannya adalah menjadi data science yang general. Apa maksudnya? Ada 2 jenis data scientist. Yang pertama spesifik pada 1 industri, 1 jenis bidang saintifik seperti kimia, pembuatan obat, seseorang yang benar-benar paham tentang pembuatan obat, yang benar-benar paham tentang masalah asuransi, tapi orang itu hanya akan berhenti di sana. Jenis data scientist yang lain, yang bisa ada di berbagai situasi, seperti pembuatan obat, penelitian kanker, perusahaan asuransi, bank, klub olah raga dan bisa menjawab pertanyaan dengan tepat, cukup paham tentang suatu bidang secara cepat untuk melakukan pekerjaan data science. Mereka harus bekerja sama dengan ahli pada suatu bidang, dapat cukup memahaminya sehingga bisa melakukan dengan data science.
