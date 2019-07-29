@@ -1,29 +1,83 @@
-Peluang 1: Infrastruktur dan Tools Data Science yang Baik
+Struktur Data Pandas
+Saya telah menyebutkan salah satu struktur data pandas di atas, DataFrame. Saya akan menjelaskan struktur data ini di dalam section ini sebagai tambahan untuk struktur data pandas lainnya, Series. Ada struktur data lainnya bernama Panel, namun saya tidak akan menjelaskan itu di dalam tutorial ini karena itu tidak sering digunakan, seperti yang disebutkan di dalam dokumentasi. DataFrame adalah struktur data 2D, Series adalah struktur data 1D, dan Panel adalah struktur data 3D dan lebih tinggi.
 
- Saat ini Python banyak digunakan untuk data science karena memiliki skalabilitas yang baik. Python tidak akan berubah menjadi seperti R atau Matlab (tidak bermaksud menyinggung programmer R). Tapi, R dan Matlab lebih seperti prototyping tools, kita tidak mau kan Python berubah menjadi prototyping tools, kita ingin Python bisa digunakan untuk membantu pekerjaan yang berat.
- Ada 2 jenis infrastruktur/tools:
- Kita bisa membuat produk dari open source tools. Contohnya DataRobot.
- Memulai proyek baru di dalam open source tools. Contohnya Sk-learn, Pandas.
- Beralih ke hal yang lebih spesifik, berikut ini adalah wishlist untuk proyek di dalam open source tools yang lebih spesifik:
- Shared Memory Parallelism.
- Integrasi Hadoop yang baik.
- Mendukung “Big Data”. Jika kita berbicara tentang “Big Data”, yang kita pikirkan pasti Hadoop, Java, Scala. Ada tools Python yang dapat berinteraksi dengan beberapa teknologi “Big Data” yang baru, tapi tidak terlalu dipakai oleh komunitas Python, melainkan oleh orang yang memiliki teknologi tadi. Mereka tau Python sangat terkenal, jadi mereka membuat API pada teknologi mereka sehingga komunitas Python bisa menggunakan tools tersebut di luar bahasa Python. Jika kalian punya passion pada Python, ingin menguasai machine learning atau data science, ada pekerjaan yang harus diselesaikan.
- Distributed in memory data frame. (Pandas)
- Mudah digunakan termasuk pada deep learning yang powerfull.
+DataFrame
+DataFrame adalah struktur data tabular yang disusun pada kolom dan baris berurut. Untuk membuatnya lebih jelas, mari lihat contoh pembuatan sebuah DataFrame (tabel) dari kamus sebuah daftar. Contoh berikut menunjukkan sebuah kamus berisi dua kunci, Name dan Age, dan daftar nilainya.
+
+import pandas as pd
+import numpy as np
+ 
+name_age = {'Name' : ['Ali', 'Bill', 'David', 'Hany', 'Ibtisam'],
+'Age' : [32, 55, 20, 43, 30]}
+data_frame = pd.DataFrame(name_age)
+print data_frame
+
+Perhatikan bahwa constructor DataFrame mengurutkan kolom secara alfabetis. Jika kamu ingin mengubah urutan kolom, kamu dapat mengetikkan hal berikut di bawah data_frame di atas:
+
+1
+data_frame_2 = pd.DataFrame(name_age, columns = ['Name', 'Age'])
+Untuk melihat hasilnya, cukup ketik: print data_frame_2.
+
+Katakan kamu tidak ingin menggunakan label default 0,1,2..., dan ingin menggunakan a, b, c,... sebagai gantinya. Dalam kasus itu, kamu dapat menggunakan index di dalam script di atas sebagai berikut:
+
+1
+data_frame_2 = pd.DataFrame(name_age, columns = ['Name', 'Age'], index = ['a', 'b', 'c', 'd', 'e'])
+Itu sangat bagus, bukan? Dengan menggunakan DataFrame, kita dapat melihat data kita tertata dalam sebuah bentuk tabular.
+
+Series
+Series adalah struktur data pandas kedua yang akan saya bicarakan. Series adalah object satu dimensi (1D) yang serupa dengan kolom di dalam tabel. Jika kita ingin membuat sebuah Series untuk daftar nama, kita dapat melakukan di bawah ini:
+
+series = pd.Series(['Ali', 'Bill', 'David', 'Hany', 'Ibtisam'],
+index = [1, 2, 3, 4, 5])
+print series
+
+Function Pandas
+Dalam section ini, saya akan menunjukkan contoh beberapa function yang dapat kita gunakan dengan DataFrame dan Series.
+
+Head dan Tail
+Function head() dan tail() mengijinkan kita untuk melihat sebuah sampel data, khususnya ketika kita memiliki jumlah entri yang besar. Jumlah default dari elemen yang ditampilkan adalah 5, namun kamu dapat mengkustomasi angkanya sesukamu.
+
+Mari katakan kita memiliki sebuah Series yang disusun dari 20,000 item (angka) secara acak:
 
 
-Peluang 2: Use Cases yang spesifik untuk Penerapan Machine Learning
+import pandas as pd
+import numpy as np
+series = pd.Series(np.random.randn(20000))
+Dengan menggunakan method head() dan tail() untuk mengamati lima item pertama dan lima item terakhir, kita dapat melakukan di bawah ini:
 
-Tidak terlalu sulit untuk memikirkan apa yang kalian pahami tentang machine learning, bagaimana caranya membuat prediksi dan mengoperasikannya. Cukup mudah kalau dimulai dengan contoh dari hal di sekitar kalian. Hal yang terpenting adalah passion kalian, kalian bisa memahami sesuatu secara mendalam. Seperti pada diagram venn, bidang keahlian sangat penting. Jadi, kalian tidak akan bisa mendalami suatu keahlian, kecuali kalau kalian memang memiliki passion.
-Tapi, kalau kalian butuh ide untuk mencari peluang:
-Kesehatan, bidang yang berpeluang paling besar. Khususnya, pada pembuatan obat yang lebih bagus dengan menggunakan machine learning. Machine learning untuk meningkatkan pelayanan kesehatan. Dari pada orang datang ke dokter ketika sakit, bisa dilakukan prediksi misalnya apakah orang itu punya diabetes atau tidak. Lalu ada quantified self (pengukuran aktivitas tubuh), quantified self merupakan suatu teknologi perangkat berupa gelang atau kaos yang dapat mengukur semua aktivitas pada tubuh manusia. Semua informasi mengenai tubuh seseorang digunakan untuk mengetahui kalau ada sesuatu yang salah sebelum menjadi parah sehingga bisa dilakukan pertolongan secepatnya. Teknologi tersebut akan menyelamatkan banyak nyawa, dan mungkin Saya akan mendalaminya suatu hari.
-Internet of Things / Machine Data secara umum. Akan banyak data yang dihasilkan dari mesin-mesin yang terkoneksi. Semua data itu bisa diotomatisasi dengan machine learning.
-Pendidikan, untuk merancang platform pembelajaran cerdas yang dapat menyesuaikan dengan kemampun belajar siswa. Misalnya memberi mereka sebuah soal, melihat bagaimana mereka mengerjakan soal itu, lalu menyesuaikan soal selanjutnya. Selama ini pendidikan di seluruh dunia menggunakan kurikulum yang sama untuk seluruh siswa. Meskipun ada banyak perusahaan yang sudah membuatnya, tetap ada peluang yang cukup besar pada bidang pendidikan.
-Computer Vision, bidang ini berhubungan dengan deep learning. Teknologi ini baru muncul sekitar 9 atau 10 tahun lalu dan computer vision merupakan bidang yang sangat menarik untuk didalami.
-Robotik, bisa membuat mesin menjadi hidup 
 
-Peluang 3: Layanan Data Science
-Yang terakhir ini, sangat menarik. Data science memiliki peluang besar. Kalau kalian ingin mendirikan perusahaan, bekerja untuk diri sendiri, peluangnya sangat besar.
+print series.head()
+print series.tail()
 
-Data science memiliki peluang yang besar karena banyak sekali perusahaan di luar sana yang berduit banyak, khususnya di Amerika Serikat, mungkin di seluruh dunia, dan mereka butuh data science. Alasan lain karena mereka tidak bisa ‘mengeksekusi’, mereka merekrut (bukan bermaksud menyinggung ahli statistik) banyak ahli statistik, mereka duduk di sebuah ruangan, menulis sesuatu di papan, dan melakukan perhitungan tapi tidak menghasilkan sesuatu untuk bisnis. Alasan mereka harus bersusah payah menerapkan hal-hal tadi, mereka tidak punya kemampuan software engineering. Mereka bisa melakukan analisis, mendapat dataset, menjalankan analisis, mungkin membangun model, tapi seperti menerapkan model yang memiliki pengaruh terhadap bisnis atau menjawab masalah-masalah saintifik, mereka tidak bisa. Jadi, kalian yang memiliki kemampuan software engineering, Saya yakin kalian memiliki kemampuan untuk memahami data science/machine learning. Jika kalian bisa mempelajari pemrograman Python sangat mungkin juga bisa mempelajari data science.
-Data science memiliki peluang yang besar untuk menghasilkan banyak uang dari perusahan besar. Kunci kesuksesannya adalah menjadi data science yang general. Apa maksudnya? Ada 2 jenis data scientist. Yang pertama spesifik pada 1 industri, 1 jenis bidang saintifik seperti kimia, pembuatan obat, seseorang yang benar-benar paham tentang pembuatan obat, yang benar-benar paham tentang masalah asuransi, tapi orang itu hanya akan berhenti di sana. Jenis data scientist yang lain, yang bisa ada di berbagai situasi, seperti pembuatan obat, penelitian kanker, perusahaan asuransi, bank, klub olah raga dan bisa menjawab pertanyaan dengan tepat, cukup paham tentang suatu bidang secara cepat untuk melakukan pekerjaan data science. Mereka harus bekerja sama dengan ahli pada suatu bidang, dapat cukup memahaminya sehingga bisa melakukan dengan data science.
+Add
+Mari ambil contoh function add(), dimana kita akan berusaha untuk menambahkan dua data frames sebagai berikut:
+
+import pandas as pd
+ 
+dictionary_1 = {'A' : [5, 8, 10, 3, 9],
+'B' : [6, 1, 4, 8, 7]}
+dictionary_2 = {'A' : [4, 3, 7, 6, 1],
+'B' : [9, 10, 10, 1, 2]}
+data_frame_1 = pd.DataFrame(dictionary_1)
+data_frame_2 = pd.DataFrame(dictionary_2)
+data_frame_3 = data_frame_1.add(data_frame_2)
+print data_frame_1
+print data_frame_2
+print data_frame_3
+
+Kamu dapat juga melakukan proses penambahan ini dengan cukup menggunakan operator +: data_frame_3 = data_frame_1 + data_frame_2.
+
+Describe
+Sebuah function pandas yang sangat bagus adalah describe(), yang membuat berbagai ringkasan statistik data kita. Sebagai contoh dalam section terakhir, mari lakukan berikut ini:
+
+print data_frame_3.describe()
+
+Sumber Lebih Lanjut
+Ini hanyalah sebuah goresan pada permukaan pandas dalam Python. Untuk lebih detail, kamu dapat memeriksa dokumentasi pandas, dan kamu juga dapat memeriksa beberapa buku seperti Mempelajari Pandas dan Menguasai Pandas.
+
+Kesimpulan
+Ilmuwan terkadang perlu melakukan beberapa operasi statistik dan menampilkan beberapa grafik rapi yang menuntut mereka untuk menggunakan sebuah bahasa pemrograman. Namun, pada saat yang sama, mereka tidak ingin menghabiskan terlalu banyak waktu atau dihadapkan dengan kurva pembelajaran yang serius dalam melakukan tugas semacam itu.
+
+Seperti yang kita lihat dalam tutorial ini, pandas mengijinkan kita untuk menyajikan ulang data dalam bentuk tabular dan melakukan beberapa operasi pada tabel tersebut dalam cara yang sangat sederhana. Dengan mengkombinasikan pandas dengan librari Python lainnya, ilmuwan bahkan dapat melakukan lebih banyak tugas lanjutan seperti menggambar grafik khusus untuk data mereka.
+
+Dengan demikian, pandas merupakan sebuah librari dan titik awal yang berguna untuk ilmuwan, ahli ekonomi, ahli statistik, dan siapapun yang ingin melakukan beberapa tugas analisis data.
